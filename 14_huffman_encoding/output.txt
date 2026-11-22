@@ -1,0 +1,57 @@
+
+=================================================================
+           DEMONSTRATION: HUFFMAN ENCODING & DECODING           
+=================================================================
+Original Input Text : 'BANANA'
+
+1. Symbol Frequencies & Generated Huffman Codes:
+-------------------------------------------------------
+  Symbol   |  Frequency   | Probability  |  Huffman Code 
+-------------------------------------------------------
+   'A'     |      3       |    0.5000    |       0       
+   'B'     |      1       |    0.1667    |       10      
+   'N'     |      2       |    0.3333    |       11      
+-------------------------------------------------------
+
+2. Encoded Bit Sequence : 100110110
+3. Decoded Output Text  : 'BANANA'
+4. Verification Match   : SUCCESS (Matches Original)
+
+5. Compression Performance Metrics:
+   - Original Size (ASCII 8-bit) : 48 bits
+   - Compressed Bit Length       : 9 bits
+   - Compression Ratio           : 5.33 : 1
+   - Space Saved                 : 81.25%
+   - Information Entropy (H)     : 1.4591 bits/symbol
+   - Average Code Length (L_avg) : 1.5000 bits/symbol
+   - Coding Efficiency           : 97.28%
+=================================================================
+
+=================================================================
+      DEMONSTRATION: HUFFMAN ENCODING ON IMAGE PIXEL DATA      
+=================================================================
+Image Patch Dimensions: (8, 8) (64 total pixels)
+
+1. Pixel Histogram (Frequencies) & Generated Variable-Length Codes:
+-----------------------------------------------------------------
+Pixel Value  |  Count (Hist)  |  Probability   |   Huffman Code  
+-----------------------------------------------------------------
+    200      |       23       |     0.3594     |        11       
+    150      |       17       |     0.2656     |        10       
+    220      |       14       |     0.2188     |        01       
+    120      |       10       |     0.1562     |        00       
+-----------------------------------------------------------------
+
+2. Encoded Bitstream Sample (first 50 bits):
+   00000000101011110000001010101111000010101011111100...
+3. Decoded Pixel Verification : SUCCESS (100% Exact Match)
+
+4. Compression Performance Metrics on Image Data:
+   - Original Uncompressed Size  : 512 bits (8 bits/pixel)
+   - Huffman Compressed Size     : 128 bits
+   - Average Bits Per Pixel (bpp): 2.00 bits/pixel (vs 8.00 bpp)
+   - Compression Ratio           : 4.00 : 1
+   - Storage Space Saved         : 75.00%
+   - Theoretical Entropy (H)     : 1.9367 bits/pixel
+   - Coding Efficiency           : 96.84%
+=================================================================
